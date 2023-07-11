@@ -1,0 +1,472 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+body{
+    overflow-x: hidden;
+    background-color:rgb(108, 105, 105); }
+header{
+    max-width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(greenish.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar{
+    padding-top: 15px ;
+    padding-right: 30px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar ul li{
+    padding-left: -50%;
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+}
+.navbar ul li a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase  ;
+}
+/*content: '';
+    height: 3px;
+    width: 0;
+    background-color: rgb(77, 122, 50);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s; */
+.navbar ul li a:hover{
+    color:  rgb(123, 146, 119);
+}
+
+.button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all .15s ease;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+  
+  .button::before,
+  .button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(40%);
+    border: 1px solid #a9b3ac;
+    transition: all .13s ease;
+   }
+  
+  .button::before {
+    top: 0;
+    border-bottom-width: 0;
+  }
+  
+  .button::after {
+    bottom: 0;
+    border-top-width: 0;
+  }
+  
+  .button:active,
+  .button:focus {
+    outline: none;
+ 
+  }
+  
+  .button:active::before {
+    top: 1px;
+  }
+  
+  .button:active::after {
+    bottom: 1px;
+  }
+  
+  .buttonintra {
+    position: relative;
+    display: block;
+    padding: 8px 20px;
+    overflow: hidden;
+    background: none;     
+  }
+  
+  .buttonintra::before {
+     display: block;
+    position: absolute; 
+ 
+  }
+  
+  .buttonintra::after {
+     display: block;
+ 
+    position: absolute;
+   }
+  
+  .buttoninter {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -5px;
+    width: 0;
+    background:rgba(255, 255, 255, 0.9);     
+    transform: skew(5deg);
+    transition: all .39s ease;
+  }
+ 
+
+  
+  .buttontext {
+    position: relative;
+   
+  }
+  
+  .button:hover .buttoninter {
+    width: calc(100% + 9px);
+  }
+  
+.button:hover{
+    color: black;
+    font-size: 14px;
+}
+
+
+.wrap{
+  position: absolute;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  background: rgba(255, 255, 255);
+  border-radius: 23px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.wrap.activebutton{
+  visibility: visible;
+}
+.content.gone{
+  visibility: hidden;
+}
+
+.pw2{
+  color: red;
+  font-size: 11px;
+  display:none;
+  margin: -4px 0 0 0;
+  padding-bottom: 5px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.inputb{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex;
+ 
+}
+.alertem,.alertpw,.alertem2,.alertpw2{
+  width: 36px;
+  margin-top: 12px;
+  display: none;
+  color: red;
+}
+#email,#email2{
+   border-bottom: 1px solid black;
+}
+#password,#password2{
+  border-bottom: 1px solid black;
+}
+
+.inputb.em{
+
+ margin-bottom: 30px;
+ margin-top: 30px;
+}
+.inputb.pwd{
+  
+  margin-bottom: 9px;
+
+}
+
+.inputb input{
+  width: 110%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;    
+  font-size: 16px;
+  padding: 0 40px 0 5px;
+}
+
+.forgot a{
+  color: rgb(55, 60, 55);
+  font-weight: 500;
+  margin: 2px 0 15px;
+  float: right;
+  text-decoration: none;
+}
+.forgot a:hover{
+  text-decoration: underline;
+}
+.ion{
+  top: 1.8%;
+  right: 0;
+  width: 40px;
+  height: 25px;
+  position: absolute;
+}
+.submit,.submit2{
+  width: 100%;
+  height:45px;
+  border: none;
+  outline: none;
+  border-radius: 5px ;
+  cursor: pointer;
+  color: white;
+  background: rgb(55, 60, 55);
+  font-size: 15px;
+}
+
+.agree{
+  margin: 0 0 0 17px;
+  padding-bottom: 10px;
+  display: flex;
+  color:rgb(55, 60, 55);
+  font-size: 14px;
+}
+
+.agree label input{
+  height: 12px;
+  margin-right: 3px ;
+}
+
+.wrap .box.login{
+  transition: ease .15s;
+
+  position: absolute;
+}
+
+.wrap.active .box.login{
+   transform: translateX(400px);
+}
+
+.new{
+  color: rgb(55, 60, 55);
+  text-align: center;
+  margin: 25px 0 10px;
+
+}
+.newsignup, .newlogin{
+  color: rgb(70, 95, 75);
+  text-decoration: none;
+}
+.newsignup:hover, .newlogin:hover{
+  text-decoration: underline;
+}
+
+.wrap .box.signup{
+  transition: ease .15s;
+
+  position: absolute;
+  transform: translateX(400px);
+}
+.wrap.active .box.signup{
+   transform: translateX(0);
+}
+
+.star{
+  color: red;
+  display: none;
+  padding-right:12px;
+}
+
+@font-face {
+font-family: font;
+src: url("radinela.otf") format("opentype");
+}
+@font-face {
+font-family: west;
+src: url("nigelina.otf") format("opentype");
+}
+@font-face {
+font-family: lop;
+src: url("dolce.ttf") format("truetype");
+}
+
+
+.logo{
+  margin-top: -2px;
+  padding-left: 8vh;
+  font-size: 26px;
+  font-weight: 900;
+  background: none;
+  text-decoration: none;
+  color: rgb(241, 247, 245);
+  cursor: pointer;
+}
+.submit:active,.submit2:active{
+  background: #454f47;
+}
+.content{
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: white;}
+ 
+
+
+
+
+@font-face {
+    font-family: font;
+    src: url("radinela.otf") format("opentype");
+  }
+  @font-face {
+    font-family: west;
+    src: url("nigelina.otf") format("opentype");
+  }
+@font-face {
+    font-family: lop;
+    src: url("dolce.ttf") format("truetype");
+  }
+
+
+
+.ydior{
+    font-family: west;
+    font-size: 55px;
+    padding-bottom: 2%;
+}
+
+.catalogue{
+    margin-top: -10%;
+     width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid  rgb(76, 87, 74);
+    background: rgb(255, 255, 255,0.2);
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/*.s1{
+    background:  rgb(65, 128, 29);
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index:-1;
+    transition: 0.2s;
+}
+.catalogue:hover span{
+    width: 100%;
+}*/
+.catalogue:hover{
+    background: rgb(76, 87, 74);
+    border: 1px solid rgb(88, 101, 86);
+     
+}
+
+.about{
+    height: 100vh;
+}
+  
+.grid-about{
+    display: grid;
+}
+.subgrid-about{
+    margin: 80px;
+    font-size: 40px;
+    width: 50%;
+}
+.subgrid-about h2{
+    color: rgba(241, 241, 241, 0.9);
+    text-shadow:  9px 9px 9px rgb(44, 44, 44);
+}
+.subgrid-about p{
+    width: 70%;
+    color:  rgb(219, 219, 219);
+    margin-left: 40px ;
+    margin-top: 30px;
+    font-size: 19px;
+}
+ 
+
+@media
+ screen and (max-width: 800px) {
+     .nouveaute h1{
+        font-size: 120%;
+     }
+     .nouveaute h2{
+        font-size: 105%;
+     }
+    .logo{
+       width: 70%;
+       margin-top: -90px;
+       margin-left: -50px;
+    }
+    .navbar ul{
+        margin-right: 10%;
+        width: 10%;
+        padding-right: 30px;
+        line-height: 30px;
+    }
+    .cont1{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    
+    }
+    .wrap{
+        width: 50%;
+    }
+    
+
+
+ }
+
+
+
+
+
+
